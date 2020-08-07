@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive include="home">
+    <keep-alive include="home"> <!-- 缓存页面 -->
       <router-view/>
     </keep-alive>
   </div>

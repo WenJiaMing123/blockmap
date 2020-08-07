@@ -1,6 +1,6 @@
 <template>
   <div id="about"> <!-- 关于我们页面 -->
-    <yd-navbar title="About us"> <!-- 顶部导航栏 -->
+    <yd-navbar :title="$t('message.aboutus')"> <!-- 顶部导航栏 -->
     </yd-navbar>
     <div class="logo">
       <img src="../../assets/earth.png" alt="no resource" width="200" height="150"/>
@@ -8,46 +8,46 @@
     <div class="about_content">
       <yd-cell-group>
         <yd-cell-item>
-          <span slot="left">Version</span>
+          <span slot="left">{{$t("message.version")}}</span>
           <span slot="right">1.1.1</span>
         </yd-cell-item>
         <yd-cell-item arrow @click.native="showMobile = true" class="select">
-          <span slot="left">Functions of APP Website</span>
+          <span slot="left">{{$t("message.functionofmobile")}}</span>
         </yd-cell-item>
         <yd-cell-item arrow @click.native="showPC = true" class="select">
-          <span slot="left">Functions of PC Website</span>
+          <span slot="left">{{$t("message.functionofpc")}}</span>
         </yd-cell-item>
         <yd-cell-item>
-          <span slot="left">Copyright</span>
+          <span slot="left">{{$t("message.copyright")}}</span>
           <span slot="right">ICBC</span>
         </yd-cell-item>
       </yd-cell-group>
     </div>
     <yd-popup v-model="showMobile" position="center" width="80%" height="50%"> <!-- app功能介绍弹窗 -->
       <div class="popup">
-        <p>App website is for individual users and we have the following functions in it:</p>
-        <p>1.Path planning:</p>
+        <p>{{$t("message.mobileIntroduction")}}</p>
+        <p>1.{{$t("message.mobilefuncone")}}</p>
         <img src="../../assets/about_first.png" alt="no resource" width="200" height="200"/>
-        <p>2.Get DID identity:</p>
+        <p>2.{{$t("message.mobilefunctwo")}}</p>
         <img src="../../assets/about_second.png" alt="no resource" width="200" height="230"/>
-        <p>3.Epidemic report:</p>
+        <p>3.{{$t("message.mobilefunthree")}}</p>
         <img src="../../assets/about_third.png" alt="no resource" width="200" height="120"/>
-        <p>4.Risk summary for everyday:</p>
+        <p>4.{{$t("message.mobilefunfour")}}</p>
         <img src="../../assets/about_fourth.png" alt="no resource" width="200" height="200"/>
       </div>
     </yd-popup>
     <yd-popup v-model="showPC" position="center" width="80%" height="50%"> <!-- app功能介绍弹窗 -->
       <div class="popup">
-        <p>PC website is for superintendents and we have the following functions in it:</p>
-        <p>1.Employee overview:</p>
+        <p>{{$t("message.pcIntroduction")}}</p>
+        <p>1.{{$t("message.pcfuncone")}}</p>
         <img src="../../assets/about_fifth.png" alt="no resource" width="200" height="100"/>
-        <p>2.Branch management:</p>
+        <p>2.{{$t("message.pcfunctwo")}}</p>
         <img src="../../assets/about_sixth.png" alt="no resource" width="200" height="100"/>
-        <p>3.Information audit:</p>
+        <p>3.{{$t("message.pcfuncthree")}}</p>
         <img src="../../assets/about_seventh.png" alt="no resource" width="200" height="100"/>
-        <p>4.Epidemic report:</p>
+        <p>4.{{$t("message.pcfuncfour")}}</p>
         <img src="../../assets/about_eighth.png" alt="no resource" width="200" height="100"/>
-        <p>5.Epidemic data statistical analysis:</p>
+        <p>5.{{$t("message.pcfuncfive")}}</p>
         <img src="../../assets/about_ninth.png" alt="no resource" width="200" height="100"/>
       </div>
     </yd-popup>
@@ -68,7 +68,7 @@ export default {
   },
   methods: { // 函数
     backToHome () { // 返回地图主页
-      this.$router.push('/')
+      this.$router.push('/home')
     }
   }
 }

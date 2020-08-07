@@ -1,6 +1,6 @@
 <template>
-  <div id="mysummary"> <!-- 风险等级总结页面 -->
-    <yd-navbar title="Today's summary"> <!-- 顶部导航栏 -->
+  <div id="mysummary" style="height: 92vh; overflow: scroll;"> <!-- 风险等级总结页面 -->
+    <yd-navbar :title="$t('message.summarytitle')"> <!-- 顶部导航栏 -->
     </yd-navbar>
     <div class="summary_content">
       <yd-flexbox direction="vertical"> <!-- 上半部分页面内容 -->
@@ -126,7 +126,7 @@ export default {
       }
     },
     backToHome () { // 返回地图主页
-      this.$router.push('/')
+      this.$router.push('/home')
     }
   }
 }

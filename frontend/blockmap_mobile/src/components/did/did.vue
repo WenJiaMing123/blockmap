@@ -1,13 +1,13 @@
 <template>
   <div id="did"> <!-- 数字身份页面 -->
-    <yd-navbar title="DID identity"> <!-- 顶部导航栏 -->
+    <yd-navbar :title="$t('message.dididentity')"> <!-- 顶部导航栏 -->
     </yd-navbar>
-    <label>姓名：{{trueName}}</label>
-    <span>Update by {{date}}</span>
+    <label>{{$t("message.realname")}}：{{trueName}}</label>
+    <span>{{$t("message.updateby")}} {{date}}</span>
     <div class="realcode">
       <img src="../../assets/realCode.png" alt="no resource" width="200" height="200"/>
     </div>
-    <button class="getdid" v-on:click="getDidCode">press to get DID code</button>
+    <button class="getdid" v-on:click="getDidCode">{{$t("message.getdid")}}</button>
     <div style="background-color: white; bottom: 0; width: 100%; position: fixed">
       <div style="padding-left: 10vw; padding-right: 10vw; padding-top: 1vh; padding-bottom: 0.5vh">
         <button class="mybutton">
@@ -42,7 +42,7 @@ export default {
   },
   methods: { // 方法
     backToHome () { // 返回地图主页
-      this.$router.push('/')
+      this.$router.push('/home')
     },
     getDidCode () { // 获取DID码
       let button = document.getElementsByClassName('getdid')[0] // 取得获取did按钮
